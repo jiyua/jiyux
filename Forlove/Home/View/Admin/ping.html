@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>告白墙后台登陆</title>
+	<link rel="stylesheet" href="__PUBLIC__/Forlove/styleadmin.css">
+	<script>
+	function shanchu(){
+		if(confirm("确定删除？")){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	</script>
+</head>
+<body>
+<div class="main">
+<div class="header">
+	<div class="tophead">
+		<h1>天空网络科技新媒体中心</h1>
+	</div>
+	<img src="__PUBLIC__/Forlove/logo.png" alt="告白墙" class="logo"><br>
+	<a href="__URL__/admin" class="butt">返回首页</a>
+</div>
+<div class="admin">
+	<h2>{$id}评论管理</h2>
+	<table class="am-table am-table-bordered">
+		<thead>
+			<tr>
+				<th>评论者昵称</th>
+				<th>评论者邮箱</th>
+				<th>内容</th>
+				<th>删除</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="data" id="vo">
+				<tr>
+					<td>{$vo.nname}</td>
+					<td>{$vo.email}</td>
+					<td>{$vo.reply}</td>
+					<td><a href="__URL__/replydel/id/{$vo.id}" onclick="return shanchu()">删除</a></td>
+				</tr>
+			</volist>
+		</tbody>
+	</table>
+</div>
+</div>
+<div class="footer">
+	<p>版权所有 &copy; 天空网络科技新媒体中心</p>
+	<p>Prowered by Skymz.cc</p>
+	</div>
+</body>
+</html>
